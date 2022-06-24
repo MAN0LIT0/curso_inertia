@@ -24,7 +24,9 @@ Route::get('/settings', function () {
 });
 
 Route::get('/users', function () {
-    return Inertia::render('Users');
+    return Inertia::render('Users', [
+        'time' => now()->toTimeString()
+    ]);
 });
 
 Route::post('/logout', function () {
