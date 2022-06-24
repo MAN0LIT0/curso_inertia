@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::get('/settings', function () {
     return Inertia::render('Settings');
+
 });
 
 Route::get('/users', function () {
