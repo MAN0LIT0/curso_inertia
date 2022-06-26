@@ -1,5 +1,4 @@
 <template>
-    <Navbar></Navbar>
     <h1>Users</h1>
     <div style="height: 500px;"></div>
     <div>
@@ -8,13 +7,9 @@
     </div>
 </template>
 <script>
-import Navbar from "../componentes/Navbar.vue";
-import { Link } from "@inertiajs/inertia-vue3";
+import Layout from "../componentes/Layout.vue";
 export default {
-    components: {
-        Navbar,
-        Link
-    },
+    layout: Layout,
     props: {
         time: String
     }

@@ -1,13 +1,10 @@
 <template>
-    <Navbar></Navbar>
     <h1>Home</h1>
 </template>
 <script>
-import Navbar from "../componentes/Navbar.vue";
+import Layout from "../componentes/Layout.vue";
 export default {
-    components: {
-        Navbar
-    },
+    layout: Layout
 }
 </script>
 <style>
