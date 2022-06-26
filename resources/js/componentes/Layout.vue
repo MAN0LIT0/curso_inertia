@@ -1,4 +1,7 @@
 <template>
+    <Head>
+        <title>Anime List</title>
+    </Head>
     <Navbar></Navbar>
     <section>
         <slot />
