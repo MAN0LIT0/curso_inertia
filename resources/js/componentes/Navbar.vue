@@ -1,7 +1,11 @@
 <template>
     <nav class="nav">
+        <div class="col-3">
+            <Link href="/" class="icon">Animes Site</Link>
+
+            <span class="welcome">Bem vindo de volta, {{ $page.props.auth.user.name }}!</span>
+        </div>
         <ul>
-            <li><Link href="/" class="icon">Animes Site</Link></li>
             <li><Link href="/" :class="{'font-bold': $page.component == 'Home'}">Home</Link></li>
             <li><Link href="/users" :class="{'font-bold': $page.component == 'Users'}">Users</Link></li>
             <li><Link href="/settings" :class="{'font-bold': $page.component == 'Settings'}">Settings</Link></li>
@@ -14,15 +18,27 @@ import { Link } from "@inertiajs/inertia-vue3";
 export default {
     components: {
         Link
-    }
+    },
 }
 </script>
 <style scoped>
     a {
         text-decoration: none;
     }
+    .col-3 {
+        width: 25%;
+    }
     .nav {
+        display: flex;
+        flex-direction: row;
         background-color: rgb(216, 193, 236);
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 10px;
+        border-radius: 5px;
+    }
+    .nav:last-child{
+        justify-content: flex-end;
     }
     .nav ul {
         display: flex;
@@ -34,6 +50,11 @@ export default {
     }
     .nav ul li {
         list-style: none;
+        margin-right: 10px;
+        transition: .5s;
+    }
+    .nav ul li:hover {
+        transform: scale(1.2);
     }
     .btn {
         padding: 5px;
@@ -51,15 +72,20 @@ export default {
         font-weight: bold;
         font-size: 20px;
         color:  rgb(157, 40, 180);
+        text-align: center;
         transition: .5s;
     }
     .icon:hover {
-        transform: scale(1.2);
+        font-size: 25px;
     }
     .font-bold{
         color: rgb(41, 197, 62);
         font-weight: bold;
         text-decoration: underline;
+    }
+    .welcome {
+        margin-left: 10px;
+        color: rgb(157, 40, 180);
     }
 
 </style>
