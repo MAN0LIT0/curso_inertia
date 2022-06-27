@@ -3,7 +3,17 @@
         <title>Users</title>
     </Head>
     <div class="container">
-        <h1 class="text-center">Users</h1>
+        <div class="d-flex justify-content-between">
+            <h1 class="">Users</h1>
+            <div class="d-flex align-items-center">
+                <input
+                    v-model="search"
+                    type="text"
+                    placeholder="Procurar"
+                    class="m-3"
+                />
+            </div>
+        </div>
         <div class="card">
             <table class="table">
                 <thead>
@@ -19,35 +29,48 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="mt-2">
-            <Component
-                :is="link.url ? 'Link' : 'span'"
-                v-for="link in users.links"
-                :key="link.id"
-                :href="link.url"
-                v-html="link.label"
-                class="mx-2"
-                :class="{'text-gray': !link.url, 'font-bold' : link.active}"
-            />
+            <div class="py-1 m-auto">
+                <Component
+                    :is="link.url ? 'Link' : 'span'"
+                    v-for="link in users.links"
+                    :key="link.id"
+                    :href="link.url"
+                    v-html="link.label"
+                    class="mx-2"
+                    :class="{
+                        'text-gray': !link.url,
+                        'font-bold': link.active,
+                    }"
+                />
+            </div>
         </div>
     </div>
 </template>
-<script>
-export default {
-    props: {
-        users: Object,
-    },
-};
+<script setup>
+import { ref, watch } from "vue";
+import { Inertia } from "@inertiajs/inertia";
+
+let props = defineProps({
+    users: Object,
+    filters: Object,
+});
+let search = ref(props.filters.search);
+watch(search, (value) => {
+    Inertia.get(
+        "/users",
+        { search: value },
+        { preserveState: true, Replace: true }
+    );
+});
 </script>
 <style>
-    a {
-        color: rgb(0, 0, 0);
-    }
-    .text-gray {
-        color: gray;
-    }
-    .font-bold {
-        font-weight: bold;
-    }
+a {
+    color: rgb(0, 0, 0);
+}
+.text-gray {
+    color: gray;
+}
+.font-bold {
+    font-weight: bold;
+}
 </style>
