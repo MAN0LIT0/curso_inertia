@@ -52,19 +52,21 @@
 <script setup>
 import { ref, watch } from "vue";
 import { Inertia } from "@inertiajs/inertia";
+import throttle from "lodash/throttle"
 
 let props = defineProps({
     users: Object,
     filters: Object,
 });
 let search = ref(props.filters.search);
-watch(search, (value) => {
+watch(search, throttle( function (value) {
+    console.log("OK");
     Inertia.get(
         "/users/index",
         { search: value },
         { preserveState: true, Replace: true }
     );
-});
+}, 1000));
 </script>
 <style>
 a {

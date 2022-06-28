@@ -1,29 +1,10 @@
 <template>
     <Head title="Criar usuário" />
-    <div class="d-flex justify-content-center flex-column align-items-center">
-        <h1>Criar novo usuário</h1>
+    <div class="d-flex justify-content-center flex-column align-items-center" style="height:100vh;">
+        <h1>Logar-se</h1>
         <div class="card p-3" style="max-width: 400px">
             <form class="row g-3 needs-validation" @submit.prevent="submitForm">
-                <div class="col-md-6">
-                    <div class="text-center fw-bold">
-                        <label for="validationCustom01" class="form-label"
-                            >Nome</label
-                        >
-                        <input
-                            v-model="form.name"
-                            type="text"
-                            class="form-control"
-                            id="validationCustom01"
-                            placeholder="Seu nome"
-                        />
-                        <div
-                            v-if="$page.props.errors.name"
-                            v-text="$page.props.errors.name"
-                            class="mt-1 rounded text-bg-danger"
-                        ></div>
-                    </div>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="text-center fw-bold">
                         <label for="validationCustom02" class="form-label">
                             Email
@@ -76,7 +57,14 @@
                             type="submit"
                             :disabled="processing"
                         >
-                            Submit form
+                            Logar
+
+
+
+
+
+
+
                         </button>
                     </div>
                 </div>
@@ -88,10 +76,10 @@
 import { Inertia } from "@inertiajs/inertia";
 export default {
     name: "Index",
+    layout: null,
     data() {
         return {
             form: {
-                name: "",
                 email: "",
                 password: "",
             },
