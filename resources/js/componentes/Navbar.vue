@@ -1,90 +1,78 @@
 <template>
-    <nav class="nav">
-        <div class="col-3">
-            <Link href="/" class="icon">Animes Site</Link>
-
-            <span class="welcome">Bem vindo de volta, {{ $page.props.auth.user.name }}!</span>
+    <nav class="navbar navbar-expand-lg bg-orange">
+        <div class="container-fluid">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="col-3">
+                    <Link href="/" class="nav-brand mx-3">
+                        <img src="https://i.pinimg.com/474x/f9/6a/b9/f96ab98d7e25be8368a32aae6fec3380.jpg" class="icon" alt="">
+                        <span class="ms-1 fw-bold">Anime list</span>
+                    </Link>
+                </div>
+                <div class="col-6">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-3">
+                            <Link href="/" class="nav-link fw-bolder" :class="{ 'active fw-bold': $page.component == 'Home' }">
+                                Home
+                            </Link>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <Link href="/users/index" class="nav-link fw-bolder" :class="{ 'active fw-bold': $page.component == 'Users/Index' }">
+                                Users
+                            </Link>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <Link href="/settings" class="nav-link fw-bolder" :class="{ 'active fw-bold': $page.component == 'Settings' }">
+                                Settings
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-end">
+                        <li class="nav-item mx-3">
+                            <Link href="/logout" method="post" class="btn btn-success" :data="{ foo: 'secso' }" as="button">
+                                Log In
+                            </Link>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <Link href="/logout" method="post" class="btn btn-danger" :data="{ foo: 'secso' }" as="button">
+                                Log Out
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <ul>
-            <li><Link href="/" :class="{'font-bold': $page.component == 'Home'}">Home</Link></li>
-            <li><Link href="/users" :class="{'font-bold': $page.component == 'Users'}">Users</Link></li>
-            <li><Link href="/settings" :class="{'font-bold': $page.component == 'Settings'}">Settings</Link></li>
-            <li><Link href="/logout" method="post" class="btn" :data="{foo:'secso'}" as="button">Log Out</Link></li>
-        </ul>
     </nav>
 </template>
 <script>
-
 export default {
-    components: {
-    },
-}
+    components: {},
+};
 </script>
 <style scoped>
     a {
         text-decoration: none;
     }
-    .col-3 {
-        width: 25%;
-    }
-    .nav {
-        display: flex;
-        flex-direction: row;
-        background-color: rgb(216, 193, 236);
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 10px;
-        border-radius: 5px;
-    }
-    .nav:last-child{
-        justify-content: flex-end;
-    }
-    .nav ul {
-        display: flex;
-        flex-direction: row;
-        padding: 5px 10px;
-        align-content: center;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .nav ul li {
-        list-style: none;
-        margin-right: 10px;
-        transition: .5s;
-    }
-    .nav ul li:hover {
-        transform: scale(1.2);
-    }
-    .btn {
-        padding: 5px;
-        border: 1px solid rgb(212, 82, 238);
-        border-radius: 10px;
-        color: rgb(212, 82, 238);
-        transition: .5s;
-    }
-    .btn:hover {
-        color: rgb(157, 40, 180);
-        border: 1px solid rgb(157, 40, 180);
-        cursor: pointer;
+    .bg-orange {
+        background-color: rgb(243, 209, 147);
     }
     .icon {
-        font-weight: bold;
-        font-size: 20px;
-        color:  rgb(157, 40, 180);
-        text-align: center;
-        transition: .5s;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 2px;
+        background-color: rgb(255, 136, 0);
     }
-    .icon:hover {
-        font-size: 25px;
-    }
-    .font-bold{
-        color: rgb(41, 197, 62);
-        font-weight: bold;
-        text-decoration: underline;
-    }
-    .welcome {
-        margin-left: 10px;
-        color: rgb(157, 40, 180);
-    }
-
 </style>

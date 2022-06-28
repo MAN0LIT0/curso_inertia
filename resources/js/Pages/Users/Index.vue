@@ -4,7 +4,10 @@
     </Head>
     <div class="container">
         <div class="d-flex justify-content-between">
-            <h1 class="">Users</h1>
+            <div class="d-flex flex-row">
+                <h1 class="me-3">Users</h1>
+                <Link href="/users/create" class="btn btn-outline-secondary btn-sm m-auto">Novo Usuário</Link>
+            </div>
             <div class="d-flex align-items-center">
                 <input
                     v-model="search"
@@ -57,7 +60,7 @@ let props = defineProps({
 let search = ref(props.filters.search);
 watch(search, (value) => {
     Inertia.get(
-        "/users",
+        "/users/index",
         { search: value },
         { preserveState: true, Replace: true }
     );

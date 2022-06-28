@@ -4,7 +4,9 @@
     </Head>
     <Navbar></Navbar>
     <section>
-        <slot />
+        <div class="container">
+            <slot />
+        </div>
     </section>
 </template>
 <script>
