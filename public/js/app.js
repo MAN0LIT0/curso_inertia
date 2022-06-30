@@ -97,7 +97,7 @@ var _withScopeId = function _withScopeId(n) {
 };
 
 var _hoisted_1 = {
-  "class": "navbar navbar-expand-lg bg-orange"
+  "class": "navbar navbar-expand-lg my-bg-white"
 };
 var _hoisted_2 = {
   "class": "container-fluid"
@@ -139,8 +139,8 @@ var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
 
 var _hoisted_7 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "ms-1 fw-bold"
-  }, "Anime list", -1
+    "class": "ms-1 fw-bold text-black"
+  }, "My list", -1
   /* HOISTED */
   );
 });
@@ -179,13 +179,13 @@ var _hoisted_18 = {
   "class": "nav-item mx-3"
 };
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Log In ");
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Cadastrar-se ");
 
 var _hoisted_20 = {
   "class": "nav-item mx-3"
 };
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Log Out ");
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Logar-se ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
@@ -243,12 +243,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8
   /* PROPS */
   , ["class"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: "/logout",
-    method: "post",
-    "class": "btn btn-success",
-    data: {
-      foo: 'secso'
-    },
+    href: "/users/create",
+    "class": "btn btn-outline-danger border-color",
     as: "button"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -258,12 +254,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: "/logout",
-    method: "post",
-    "class": "btn btn-danger",
-    data: {
-      foo: 'secso'
-    },
+    href: "/login",
+    "class": "btn btn-outline-success border-color",
     as: "button"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -390,7 +382,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\na[data-v-34465552] {\n        text-decoration: none;\n}\n.bg-orange[data-v-34465552] {\n        background-color: rgb(243, 209, 147);\n}\n.icon[data-v-34465552] {\n        width: 50px;\n        height: 50px;\n        border-radius: 50%;\n        padding: 2px;\n        background-color: rgb(255, 136, 0);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\na[data-v-34465552] {\n        text-decoration: none;\n}\n.my-bg-white[data-v-34465552] {\n        background-color: rgba(141, 141, 141, 0.603);\n}\n.icon[data-v-34465552] {\n        width: 50px;\n        height: 50px;\n        border-radius: 50%;\n        padding: 2px;\n        background-color: rgb(255, 136, 0);\n}\n.border-color[data-v-34465552] {\n        border: 1px solid rgb(0,0,0);\n        color: rgb(0,0,0);\n        transition: .5s;\n}\n.border-color[data-v-34465552]:hover {\n        border: 1px solid rgb(0,0,0);\n        background-color: rgb(56, 56, 56);\n        color: #FFF;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

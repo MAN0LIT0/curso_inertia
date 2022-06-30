@@ -1,5 +1,5 @@
 <template>
-    <Head title="Criar usuário" />
+    <Head title="Logar-se" />
     <div class="d-flex justify-content-center flex-column align-items-center" style="height:100vh;">
         <h1>Logar-se</h1>
         <div class="card p-3" style="max-width: 400px">
@@ -25,9 +25,9 @@
                             />
                         </div>
                         <div
-                            v-if="$page.props.errors.email"
-                            v-text="$page.props.errors.email"
-                            class="mt-1 rounded text-bg-danger"
+                            v-if="form.errors.email"
+                            v-text="form.errors.email"
+                            class="mt-1 rounded text-bg text-sm"
                         ></div>
                     </div>
                 </div>
@@ -44,9 +44,9 @@
                             placeholder="Sua senha"
                         />
                         <div
-                            v-if="$page.props.errors.password"
-                            v-text="$page.props.errors.password"
-                            class="mt-1 rounded text-bg-danger"
+                            v-if="form.errors.password"
+                            v-text="form.errors.password"
+                            class="mt-1 rounded text-bg text-sm"
                         ></div>
                     </div>
                 </div>
@@ -55,16 +55,9 @@
                         <button
                             class="btn btn-outline-primary m-auto"
                             type="submit"
-                            :disabled="processing"
+                            :disabled="form.processing"
                         >
                             Logar
-
-
-
-
-
-
-
                         </button>
                     </div>
                 </div>
@@ -73,26 +66,29 @@
     </div>
 </template>
 <script>
-import { Inertia } from "@inertiajs/inertia";
 export default {
     name: "Index",
     layout: null,
-    data() {
-        return {
-            form: {
-                email: "",
-                password: "",
-            },
-            processing: false
-        };
-    },
-    methods: {
-        submitForm() {
-            Inertia.post("/users", this.form, {
-                onStart: () => {this.processing = true},
-                onFinish: () => {this.processing = false}
-            });
-        },
-    },
 };
 </script>
+
+<script setup>
+import { useForm } from "@inertiajs/inertia-vue3"
+    let form = useForm({
+        email: '',
+        password:''
+    });
+
+    let submitForm = () => {
+        form.post('/login');
+    };
+
+</script>
+<style scoped>
+    .text-sm{
+        font-size: 12px;
+    }
+    .text-bg {
+        background-color: rgba(255, 91, 91, 0.712);
+    }
+</style>

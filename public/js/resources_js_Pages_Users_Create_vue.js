@@ -15,6 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Index",
+  layout: null,
   data: function data() {
     return {
       form: {
@@ -38,7 +39,8 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     }
-  }
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -56,10 +58,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "d-flex justify-content-center flex-column align-items-center"
+  "class": "d-flex justify-content-center flex-column align-items-center",
+  style: {
+    "height": "100vh"
+  }
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Criar novo usuário", -1
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", null, "Cadastre um novo usuário", -1
 /* HOISTED */
 );
 
@@ -136,7 +141,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
-    title: "Criar usuário"
+    title: "Cadastrar usuário"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     "class": "row g-3 needs-validation",
     onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
